@@ -1,0 +1,125 @@
+{
+    "count": 10,
+    "offers": [
+        {
+            "name": "Super house",
+            "id": "00001",
+            "officeId": "pol0001",
+            "owner": "John Doe",
+            "ownersPrice": 400000,
+            "ourPrice": 450000,
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
+            "city": "Warsaw",
+            "postalCode": "93479",
+            "street": "Offer Test Street under a Tree no. 6"
+        },
+        {
+            "name": "Duper house",
+            "id": "00002",
+            "officeId": "pol0001",
+            "owner": "John Doe",
+            "ownersPrice": 400000,
+            "ourPrice": 450000,
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
+            "city": "Warsaw",
+            "postalCode": "93479",
+            "street": "Offer Test Street under a Tree no. 6"
+        },
+        {
+            "name": "Luper house",
+            "id": "00003",
+            "officeId": "pol0002",
+            "owner": "John Doe",
+            "ownersPrice": 400000,
+            "ourPrice": 450000,
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
+            "city": "Warsaw",
+            "postalCode": "93479",
+            "street": "Offer Test Street under a Tree no. 6"
+        },
+        {
+            "name": "Paper house",
+            "id": "00004",
+            "officeId": "pol0002",
+            "owner": "John Doe",
+            "ownersPrice": 400000,
+            "ourPrice": 450000,
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
+            "city": "Warsaw",
+            "postalCode": "93479",
+            "street": "Offer Test Street under a Tree no. 6"
+        },
+        {
+            "name": "Rapper house",
+            "id": "00005",
+            "officeId": "eng0001",
+            "owner": "John Doe",
+            "ownersPrice": 400000,
+            "ourPrice": 450000,
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
+            "city": "Dover",
+            "postalCode": "93479",
+            "street": "Offer Test Street under a Tree no. 6"
+        },
+        {
+            "name": "Fapper house",
+            "id": "00006",
+            "officeId": "eng0001",
+            "owner": "John Doe",
+            "ownersPrice": 400000,
+            "ourPrice": 450000,
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
+            "city": "Dover",
+            "postalCode": "93479",
+            "street": "Offer Test Street under a Tree no. 6"
+        },
+        {
+            "name": "Big building",
+            "id": "00007",
+            "officeId": "eng0001",
+            "owner": "John Doe",
+            "ownersPrice": 400000,
+            "ourPrice": 450000,
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
+            "city": "Dover",
+            "postalCode": "93479",
+            "street": "Offer Test Street under a Tree no. 6"
+        },
+        {
+            "name": "Nice building",
+            "id": "00008",
+            "officeId": "eng0001",
+            "owner": "John Doe",
+            "ownersPrice": 400000,
+            "ourPrice": 450000,
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
+            "city": "Dover",
+            "postalCode": "93479",
+            "street": "Offer Test Street under a Tree no. 6"
+        },
+        {
+            "name": "Nicer building",
+            "id": "00009",
+            "officeId": "eng0001",
+            "owner": "John Doe",
+            "ownersPrice": 400000,
+            "ourPrice": 450000,
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
+            "city": "Dover",
+            "postalCode": "93479",
+            "street": "Offer Test Street under a Tree no. 6"
+        },
+        {
+            "name": "Empty emptiness",
+            "id": "00010",
+            "officeId": "eng0001",
+            "owner": "John Doe",
+            "ownersPrice": 400000,
+            "ourPrice": 450000,
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
+            "city": "Dover",
+            "postalCode": "93479",
+            "street": "Offer Test Street under a Tree no. 6"
+        }
+    ]
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+		<title>REHQ // Find your real estate</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<!-- HEADER SECTION -->
+			<header class="header">
+				<img src="img/logo.png" alt="Logo" class="header__logo" />
+				<form class="search">
+					<input type="text" class="search__field" placeholder="Find real estate..." />
+					<button class="btn search__btn">
+						<svg class="search__icon">
+							<use href="img/icons.svg#icon-magnifying-glass"></use>
+						</svg>
+						<span>Search</span>
+					</button>
+				</form>
+			</header>
+
+			<!-- OFFICES LIST SECTION -->
+			<div class="offices">
+				<h2 class="heading-2">Offices</h2>
+
+				<!-- OFFICES LIST -->
+				<ul class="results__list">
+					<li>
+						<a class="results__link results__link--active" href="#pol0001">
+							<div class="results__data">
+								<h4 class="results__name">Warsaw Office</h4>
+								<p class="results__city">Warsaw</p>
+								<p class="results__country">Poland</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a class="results__link" href="#pol0002">
+							<div class="results__data">
+								<h4 class="results__name">Lodz Office</h4>
+								<p class="results__city">Lodz</p>
+								<p class="results__country">Poland</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a class="results__link" href="#pol0003">
+							<div class="results__data">
+								<h4 class="results__name">Kracov Office</h4>
+								<p class="results__city">Kracov</p>
+								<p class="results__country">Poland</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+
+				<!-- PAGE BUTTONS -->
+				<div class="results__pages">
+					<button class="btn-inline results__btn--prev">
+						<svg class="search__icon">
+							<use href="img/icons.svg#icon-triangle-left"></use>
+						</svg>
+						<span>Page 1</span>
+					</button>
+					<button class="btn-inline results__btn--next">
+						<span>Page 3</span>
+						<svg class="search__icon">
+							<use href="img/icons.svg#icon-triangle-right"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<!-- OFFERS LIST SECTION -->
+			<div class="offers">
+				<h2 class="heading-2">Offers</h2>
+				<!-- OFFERS LIST -->
+				<ul class="results__list">
+					<li>
+						<a class="results__link" href="$00001">
+							<figure class="results__fig">
+								<img
+									src="https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
+									alt="Test"
+								/>
+							</figure>
+							<div class="results__data">
+								<h4 class="results__name">Super house</h4>
+								<p class="results__owner">Jon Doe</p>
+								<p class="results__price">400000 $</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a class="results__link results__link--active" href="$00002">
+							<figure class="results__fig">
+								<img
+									src="https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
+									alt="Test"
+								/>
+							</figure>
+							<div class="results__data">
+								<h4 class="results__name">Duper house</h4>
+								<p class="results__owner">Jon Doe</p>
+								<p class="results__price">400000 $</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a class="results__link" href="$00003">
+							<figure class="results__fig">
+								<img
+									src="https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
+									alt="Test"
+								/>
+							</figure>
+							<div class="results__data">
+								<h4 class="results__name">Luper house</h4>
+								<p class="results__owner">Jon Doe</p>
+								<p class="results__price">400000 $</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a class="results__link" href="$00004">
+							<figure class="results__fig">
+								<img
+									src="https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
+									alt="Test"
+								/>
+							</figure>
+							<div class="results__data">
+								<h4 class="results__name">Paper house</h4>
+								<p class="results__owner">Jon Doe</p>
+								<p class="results__price">5500000 $</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+
+				<!-- PAGE BUTTONS -->
+				<div class="results__pages">
+					<button class="btn-inline results__btn--prev">
+						<svg class="search__icon">
+							<use href="img/icons.svg#icon-triangle-left"></use>
+						</svg>
+						<span>Page 1</span>
+					</button>
+					<button class="btn-inline results__btn--next">
+						<span>Page 3</span>
+						<svg class="search__icon">
+							<use href="img/icons.svg#icon-triangle-right"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<!-- OFFER SECTION -->
+			<div class="offer">
+				<figure class="offer__fig">
+					<img src="img/test1.jpg" alt="House" class="offer__img" />
+					<h1 class="offer__name">
+						<span>Duper House</span>
+					</h1>
+				</figure>
+				<div class="offer__container">
+					<!-- LEFT COLUMN -->
+					<div class="offer__info">
+						<svg class="offer__info-icon">
+							<use href="img/ext-icons.svg#icon-contacts-filled"></use>
+						</svg>
+						<span class="offer__info-data offer__info-data--owner">Jon Doe</span>
+					</div>
+					<div class="offer__info">
+						<svg class="offer__info-icon">
+							<use href="img/ext-icons.svg#icon-rating"></use>
+						</svg>
+						<span class="offer__info-data offer__info-data--id">00001</span>
+					</div>
+					<div class="offer__info">
+						<svg class="offer__info-icon">
+							<use href="img/ext-icons.svg#icon-home"></use>
+						</svg>
+						<span class="offer__info-data offer__info-data--address"
+							>Offer Test Street under a Tree no. 6</span
+						>
+					</div>
+					<div class="offer__info">
+						<span
+							class="offer__info-data offer__info-data--price-sign offer__info-data--price offer__info-data--price-sign-owners"
+							>$</span
+						>
+						<span
+							class="offer__info-data offer__info-data--price offer__info-data--price-owners"
+							>450 000</span
+						>
+					</div>
+					<div class="offer__info">
+						<span
+							class="offer__info-data offer__info-data--price-sign offer__info-data--price offer__info-data--price-sign-ours"
+							>$</span
+						>
+						<span
+							class="offer__info-data offer__info-data--price offer__info-data--price-ours"
+							>400 000</span
+						>
+					</div>
+				</div>
+				<!-- Reviews -->
+				<div class="reviews">
+					<h2 class="heading-2 heading-center">REVIEWS</h2>
+
+					<ul class="review__list">
+						<li class="review__item">
+							<ul>
+								<li>
+									<div class="offer__info">
+										<svg class="offer__info-icon">
+											<use
+												href="img/ext-icons.svg#icon-contacts-filled"
+											></use>
+										</svg>
+										<span class="offer__info-data offer__info-data--owner"
+											>Jon Doe</span
+										>
+									</div>
+                                </li>
+                                <li>
+								<p class="review__description">
+									At vero eos et accusamus et iusto odio dignissimos ducimus qui
+									blanditiis praesentium voluptatum deleniti atque corrupti quos
+									dolores et quas molestias excepturi sint occaecati cupiditate
+									non provident, similique sunt in culpa qui officia deserunt
+									mollitia animi, id est laborum et dolorum fuga. Et harum quidem
+									rerum facilis est et expedita distinctio. Nam libero tempore,
+									cum soluta nobis est eligendi optio cumque nihil impedit quo
+									minus id quod maxime placeat facere possimus, omnis voluptas
+									assumenda est, omnis dolor repellendus. Temporibus autem
+									quibusdam et aut officiis debitis aut rerum necessitatibus saepe
+									eveniet ut et voluptates repudiandae sint et molestiae non
+									recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
+									ut aut reiciendis voluptatibus maiores alias consequatur aut
+									perferendis doloribus asperiores repellat.
+                                </p>
+                                </li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
