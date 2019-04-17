@@ -242,7 +242,8 @@ body {
 .offers {
 	padding: 2rem 0;
 }
-.results__list {
+.results__list--offices,
+.results__list--offers {
 	list-style: none;
 }
 .results__link:link,
@@ -309,7 +310,8 @@ body {
 	text-transform: uppercase;
 	font-weight: 600;
 }
-.results__pages {
+.results__pages--offices,
+.results__pages--offers {
 	margin-top: 3rem;
 	padding: 0 3rem;
 }
