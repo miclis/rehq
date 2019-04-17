@@ -4,122 +4,72 @@
         {
             "name": "Super house",
             "id": "00001",
-            "officeId": "pol0001",
             "owner": "John Doe",
-            "ownersPrice": 400000,
             "ourPrice": 450000,
-            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
-            "city": "Warsaw",
-            "postalCode": "93479",
-            "street": "Offer Test Street under a Tree no. 6"
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
         },
         {
             "name": "Duper house",
             "id": "00002",
-            "officeId": "pol0001",
             "owner": "John Doe",
-            "ownersPrice": 400000,
             "ourPrice": 450000,
-            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
-            "city": "Warsaw",
-            "postalCode": "93479",
-            "street": "Offer Test Street under a Tree no. 6"
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
         },
         {
-            "name": "Luper house",
+            "name": "Duper house",
             "id": "00003",
-            "officeId": "pol0002",
             "owner": "John Doe",
-            "ownersPrice": 400000,
             "ourPrice": 450000,
-            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
-            "city": "Warsaw",
-            "postalCode": "93479",
-            "street": "Offer Test Street under a Tree no. 6"
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
         },
         {
-            "name": "Paper house",
+            "name": "Duper house",
             "id": "00004",
-            "officeId": "pol0002",
             "owner": "John Doe",
-            "ownersPrice": 400000,
             "ourPrice": 450000,
-            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
-            "city": "Warsaw",
-            "postalCode": "93479",
-            "street": "Offer Test Street under a Tree no. 6"
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
         },
         {
-            "name": "Rapper house",
+            "name": "Duper house",
             "id": "00005",
-            "officeId": "eng0001",
             "owner": "John Doe",
-            "ownersPrice": 400000,
             "ourPrice": 450000,
-            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
-            "city": "Dover",
-            "postalCode": "93479",
-            "street": "Offer Test Street under a Tree no. 6"
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
         },
         {
-            "name": "Fapper house",
+            "name": "Duper house",
             "id": "00006",
-            "officeId": "eng0001",
             "owner": "John Doe",
-            "ownersPrice": 400000,
             "ourPrice": 450000,
-            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
-            "city": "Dover",
-            "postalCode": "93479",
-            "street": "Offer Test Street under a Tree no. 6"
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
         },
         {
-            "name": "Big building",
+            "name": "Duper house",
             "id": "00007",
-            "officeId": "eng0001",
             "owner": "John Doe",
-            "ownersPrice": 400000,
             "ourPrice": 450000,
-            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
-            "city": "Dover",
-            "postalCode": "93479",
-            "street": "Offer Test Street under a Tree no. 6"
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
         },
         {
-            "name": "Nice building",
+            "name": "Duper house",
             "id": "00008",
-            "officeId": "eng0001",
             "owner": "John Doe",
-            "ownersPrice": 400000,
             "ourPrice": 450000,
-            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
-            "city": "Dover",
-            "postalCode": "93479",
-            "street": "Offer Test Street under a Tree no. 6"
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
         },
         {
-            "name": "Nicer building",
+            "name": "Duper house",
             "id": "00009",
-            "officeId": "eng0001",
             "owner": "John Doe",
-            "ownersPrice": 400000,
             "ourPrice": 450000,
-            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
-            "city": "Dover",
-            "postalCode": "93479",
-            "street": "Offer Test Street under a Tree no. 6"
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
         },
         {
-            "name": "Empty emptiness",
+            "name": "Duper house",
             "id": "00010",
-            "officeId": "eng0001",
             "owner": "John Doe",
-            "ownersPrice": 400000,
             "ourPrice": 450000,
-            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
-            "city": "Dover",
-            "postalCode": "93479",
-            "street": "Offer Test Street under a Tree no. 6"
+            "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"
         }
     ]
 }

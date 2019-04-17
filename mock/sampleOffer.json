@@ -1,0 +1,12 @@
+{
+    "name": "Super house",
+    "id": "00001",
+    "officeId": "pol0001",
+    "owner": "John Doe",
+    "ownersPrice": 400000,
+    "ourPrice": 450000,
+    "imageUrl": "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
+    "city": "Warsaw",
+    "postalCode": "93479",
+    "street": "Offer Test Street under a Tree no. 6"
+}

@@ -6,7 +6,8 @@ export const elements = {
     officesResPages: document.querySelector('.results__pages--offices'),
     offersRes: document.querySelector('.offers'),
 	offersResList: document.querySelector('.results__list--offers'),
-	offersResPages: document.querySelector('.results__pages--offers')
+	offersResPages: document.querySelector('.results__pages--offers'),
+	offer: document.querySelector('.offer')
 };
 
 export const elementStrings = {

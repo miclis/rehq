@@ -10,7 +10,7 @@ export default class OfficeList {
 			this.result = res.data.offices;
 		} catch (error) {
 			console.log(error);
-			alert('Something went wrong getting offices :(');
+			alert('Something went wrong when getting offices :(');
 		}
 	}
 }
