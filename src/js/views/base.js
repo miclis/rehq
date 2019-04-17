@@ -21,7 +21,7 @@ export const renderLoader = parent => {
             </svg>
         </div>
     `;
-	parent.insertAdjacentHTML('afterbegin', loader);
+	parent.insertAdjacentHTML('beforeend', loader);
 };
 
 export const clearLoader = () => {
