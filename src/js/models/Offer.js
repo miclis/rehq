@@ -8,7 +8,7 @@ export default class Offer {
 
 	async getOffer() {
 		try {
-            const res = await axios(`http://www.mocky.io/v2/5cb7922d4c00005500d3d1f8`);
+            const res = await axios(`http://www.mocky.io/v2/5cbb9d8e3100006b284d7529`);
             this.result = res.data;
 		} catch (error) {
 			alert('Something went wrong when getting offer info...');

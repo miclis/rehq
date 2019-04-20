@@ -5,6 +5,8 @@ import OfferList from './models/OfferList';
 import * as offerListView from './views/offerListView';
 import Offer from './models/Offer';
 import * as offerView from './views/offerView';
+import ReviewList from './models/ReviewList';
+import * as reviewListView from './views/reviewListView';
 
 import { elements, renderLoader, clearLoader } from './views/base';
 
@@ -123,16 +125,30 @@ const controlOffer = async () => {
 			// 6. Render Offer
 			clearLoader();
 			offerView.renderOffer(state.offer.result);
+			// controlReviews();
 		} catch (error) {
 			alert('Something went wrong when rendering offer...');
 			console.log(error);
 		}
+	}
+};
 
-		// Reviews
+const controlReviews = async () => {
+	// Reviews
+	// 1. Create new reviewList object
+	state.reviews = new ReviewList();
 
-		try {
-			// 7. Get Reviews data
-		} catch (error) {}
+	try {
+		// 2. Get Reviews data
+		await state.reviews.getReviewList();
+		console.log(state.reviews);
+
+		// 3. Render reviews
+		clearLoader();
+		reviewListView.renderReviews(state.reviews.result);
+		console.log(state.reviews.result);
+	} catch (error) {
+		console.log(error);
 	}
 };
 

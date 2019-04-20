@@ -2,8 +2,47 @@ import { elements } from './base';
 import { formatPrice } from './offerListView';
 
 export const clearOffer = () => {
-	elements.offer.innerHTML = '';
+    elements.offer.innerHTML = '';
 };
+
+const createReview = review => `
+    <li class="review__item">
+        <ul>
+            <li class="review__info-item">
+                <div class="review__info">
+                    <svg class="offer__info-icon review__info-icon--reviewer">
+                        <use
+                            href="img/ext-icons.svg#icon-contacts-filled"
+                        ></use>
+                    </svg>
+                    <span class="offer__info-data offer__info-data--owner"
+                        >${review.author}</span
+                    >
+                </div>
+            </li>
+            <li>
+                <div class="review__info">
+                    <span
+                        class="review__info-data offer__info-data--price-sign offer__info-data--price offer__info-data--price-sign-ours"
+                        >$</span
+                    >
+                    <span
+                        class="offer__info-data offer__info-data--price offer__info-data--price-ours"
+                        >${review.ourPrice}</span
+                    >
+                    <button class="review__accept btn-tiny">
+                        <svg class="offer__info-icon">
+                            <use href="img/ext-icons.svg#icon-checked"></use>
+                        </svg>
+                    </button>
+                </div>
+            </li>
+            <li>
+                <p class="review__description">${review.notes}</p>
+            </li>
+        </ul>
+    </li>
+`;
 
 export const renderOffer = offer => {
 	const markup = `
@@ -56,7 +95,10 @@ export const renderOffer = offer => {
             </div>
         </div>
         <div class="reviews">
-            <h2 class="heading-2 heading-left">REVIEWS</h2>
+			<h2 class="heading-2 heading-left">REVIEWS</h2>
+            <ul class="review__list">
+                ${offer.reviews.map(review => createReview(review)).join('')}
+            </ul>
         </div>
     `;
 	elements.offer.insertAdjacentHTML('afterbegin', markup);
