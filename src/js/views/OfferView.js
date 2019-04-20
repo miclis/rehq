@@ -28,9 +28,9 @@ const createReview = review => `
                     >
                     <span
                         class="offer__info-data offer__info-data--price offer__info-data--price-ours"
-                        >${review.ourPrice}</span
+                        >${formatPrice(review.ourPrice)}</span
                     >
-                    <button class="review__accept btn-tiny">
+                    <button class="review__accept ${review.accepted ? 'reviev__accept--accepted': ''} btn-tiny">
                         <svg class="offer__info-icon">
                             <use href="img/ext-icons.svg#icon-checked"></use>
                         </svg>

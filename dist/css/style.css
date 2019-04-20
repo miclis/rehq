@@ -134,9 +134,9 @@ body {
 .btn-tiny {
 	border: none;
 	background: none;
-  cursor: pointer;
-  margin-left: 3rem;
-  transform: translateY(6px);
+	cursor: pointer;
+	margin-left: 3rem;
+	transform: translateY(6px);
 }
 .btn-tiny svg {
 	fill: rgb(75, 147, 255);
@@ -146,7 +146,7 @@ body {
 	outline: none;
 }
 .btn-tiny:hover svg {
-	fill: rgb(75, 147, 255);
+	fill: rgb(6, 255, 40);
 	transform: translateY(-1px);
 }
 .btn-tiny:active svg {
@@ -407,8 +407,8 @@ body {
 	height: 2.5rem;
 	width: 2.5rem;
 	text-align: center;
-  font-size: 2.5rem;
-  transform: translateY(-8px);
+	font-size: 2.5rem;
+	transform: translateY(-8px);
 }
 .offer__info-data--price-sign-owners {
 	color: red;
@@ -447,8 +447,8 @@ body {
 }
 .review__list {
 	list-style: none;
-  overflow-y: scroll;
-  max-height: 50rem;
+	overflow-y: scroll;
+	max-height: 50rem;
 }
 .review__item {
 	display: flex;
@@ -466,11 +466,20 @@ body {
 	text-align: justify;
 }
 .review__accept {
-  position: relative;
+	position: relative;
 	right: 0;
 	visibility: hidden;
 	opacity: 0;
-  transition: all 0.5s;
+	transition: all 0.5s;
+}
+.reviev__accept--accepted {
+	opacity: 1;
+	visibility: visible;
+	cursor: default;
+}
+.reviev__accept--accepted svg,
+.reviev__accept--accepted:hover svg {
+	fill: rgb(6, 255, 40);
 }
 .review__item:hover .review__accept {
 	opacity: 1;
@@ -489,5 +498,5 @@ body {
 	align: center;
 }
 .review__info-icon--reviewer {
-  fill: rgb(12, 173, 152);
+	fill: rgb(12, 173, 152);
 }

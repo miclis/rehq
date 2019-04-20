@@ -16,4 +16,8 @@ export default class Offer {
 			throw new Error('Failed to get offer...');
 		}
 	}
+
+	async acceptReview(id) {
+		// Notify server that review {id} has been accepted
+	}
 }
