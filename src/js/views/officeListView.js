@@ -6,12 +6,15 @@ export const clearOffices = () => {
 };
 
 export const highlightSelected = id => {
-	const resultsArr = Array.from(document.querySelectorAll('.results__link'));
+	const resultsArr = Array.from(document.querySelectorAll('.results__link--office'));
 	resultsArr.forEach(el => {
 		el.classList.remove('results__link--active');
 	});
 	const check = document.querySelector(`.results__link[href*="${id}"]`);
-	if (check) document.querySelector(`.results__link[href*="${id}"]`).classList.add('results__link--active');
+	if (check)
+		document
+			.querySelector(`.results__link[href*="${id}"]`)
+			.classList.add('results__link--active');
 };
 
 // Cuts the name into words and then joins again until the length is <= limit
@@ -33,7 +36,7 @@ export const limitOfficeName = (name, limit = 24) => {
 const renderOffice = office => {
 	const markup = `
 		<li>
-			<a class="results__link" href="#${office.id}">
+			<a class="results__link results__link--office" href="#${office.id}">
 				<div class="results__data">
 					<h4 class="results__name">${limitOfficeName(office.name)}</h4>
 					<p class="results__city">${office.city}</p>

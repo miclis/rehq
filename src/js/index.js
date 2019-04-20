@@ -4,7 +4,7 @@ import * as officeListView from './views/officeListView';
 import OfferList from './models/OfferList';
 import * as offerListView from './views/offerListView';
 import Offer from './models/Offer';
-import * as offerView from './views/OfferView';
+import * as offerView from './views/offerView';
 
 import { elements, renderLoader, clearLoader } from './views/base';
 
@@ -25,6 +25,8 @@ const controlOfficeList = async () => {
 
 	// 2. Prepare UI for Offices results
 	officeListView.clearOffices();
+	offerListView.clearOffers();
+	offerView.clearOffer();
 	renderLoader(elements.officesRes);
 	try {
 		// 3. Get offices
@@ -43,7 +45,6 @@ const controlOfficeList = async () => {
 elements.searchForm.addEventListener('submit', e => {
 	e.preventDefault();
 	controlOfficeList();
-	controlOfferList(); // to be moved from here
 });
 
 elements.officesResPages.addEventListener('click', e => {
@@ -59,15 +60,24 @@ elements.officesResPages.addEventListener('click', e => {
  * OFFERLIST CONTROLLER
  */
 const controlOfferList = async () => {
+	// Get Office Id from URL
+	const id = window.location.hash.replace('#', '');
+
 	// 1. New OfferList object and add to state
 	state.offerList = new OfferList();
 
 	// 2. Prepare UI for Offers results
 	offerListView.clearOffers();
+	offerView.clearOffer();
 	renderLoader(elements.offersRes);
+
+	// 3. Highlight selected offer item
+	if (state.officeList) officeListView.highlightSelected(id);
+
 	try {
 		// 3. Get offers
 		await state.offerList.getAllResults();
+		// await state.offerList.getResults(id);
 
 		// 4. Render offices
 		clearLoader();
@@ -117,7 +127,24 @@ const controlOffer = async () => {
 			alert('Something went wrong when rendering offer...');
 			console.log(error);
 		}
+
+		// Reviews
+
+		try {
+			// 7. Get Reviews data
+		} catch (error) {}
 	}
 };
 
-['hashchange', 'load'].forEach(event => window.addEventListener(event, controlOffer));
+['hashchange', 'load'].forEach(event =>
+	window.addEventListener(event, function() {
+		var regexOffices = /#[^\$]/;
+		var regexOffers = /#\$/;
+
+		if (window.location.hash.match(regexOffices)) {
+			controlOfferList();
+		} else if (window.location.hash.match(regexOffers)) {
+			controlOffer();
+		}
+	})
+);

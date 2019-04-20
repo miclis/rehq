@@ -6,12 +6,15 @@ export const clearOffers = () => {
 };
 
 export const highlightSelected = id => {
-	const resultsArr = Array.from(document.querySelectorAll('.results__link'));
+	const resultsArr = Array.from(document.querySelectorAll('.results__link--offer'));
 	resultsArr.forEach(el => {
 		el.classList.remove('results__link--active');
 	});
 	const check = document.querySelector(`.results__link[href*="${id}"]`);
-	if (check) document.querySelector(`.results__link[href*="${id}"]`).classList.add('results__link--active');
+	if (check)
+		document
+			.querySelector(`.results__link[href*="${id}"]`)
+			.classList.add('results__link--active');
 };
 
 // Cuts the name into words and then joins again until the length is <= limit
@@ -30,21 +33,21 @@ export const limitOfferName = (name, limit = 28) => {
 	return name;
 };
 
-export const formatPrice = (number) => {
-    let st = number.toString();
-    const sign = '$';
+export const formatPrice = number => {
+	let st = number.toString();
+	const sign = '$';
 
-    if (st.length > 3) {
-        st = st.substr(0, st.length - 3) + "'" + st.substr(st.length - 3, st.length);
-    }
+	if (st.length > 3) {
+		st = st.substr(0, st.length - 3) + "'" + st.substr(st.length - 3, st.length);
+	}
 
-    return st + ' ' + sign;
-}
+	return st + ' ' + sign;
+};
 
 const renderOffer = offer => {
 	const markup = `
     <li>
-        <a class="results__link" href="#$${offer.id}">
+        <a class="results__link results__link--offer" href="#$${offer.id}">
             <figure class="results__fig">
                 <img
                     src="${offer.imageUrl}"
