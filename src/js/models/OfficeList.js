@@ -1,12 +1,22 @@
 import axios from 'axios';
-import { key } from '../config';
+import { proxy, token, apiURL, officesURL  } from '../config';
 
 export default class OfficeList {
 	constructor() {}
 
-	async getAllResults() {
+	async getResults() {
 		try {
-			const res = await axios(`http://www.mocky.io/v2/5cb765fc3200007747cd4ac2`); //axios(`https://www.ourapi.com/api/search?key=${key}&q=${query}`);
+			const res = await axios(`${apiURL}/${token}/${officesURL}`);
+			this.result = res.data.offices;
+		} catch (error) {
+			console.log(error);
+			alert('Something went wrong when getting offices :(');
+		}
+	}
+
+	async getDefaultResults() {
+		try {
+			const res = await axios(`${apiURL}/${officesURL}`);
 			this.result = res.data.offices;
 		} catch (error) {
 			console.log(error);

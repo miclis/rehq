@@ -1,14 +1,25 @@
 import axios from 'axios';
-import { key, proxy } from '../config';
+import { proxy, token, apiURL, offerURL, acceptReviewURL } from '../config';
 
 export default class Offer {
 	constructor(id) {
 		this.id = id;
 	}
 
-	async getOffer() {
+	async getOffer(id) {
 		try {
-            const res = await axios(`http://www.mocky.io/v2/5cbb9d8e3100006b284d7529`);
+			const res = await axios(`${apiURL}/${token}/${offerURL}/${id}`);
+			this.result = res.data;
+		} catch (error) {
+			alert('Something went wrong when getting offer info...');
+			console.log(error);
+			throw new Error('Failed to get offer...');
+		}
+	}
+
+	async getDefaultOffer() {
+		try {
+            const res = await axios(`${apiURL}/${offerURL}`);
             this.result = res.data;
 		} catch (error) {
 			alert('Something went wrong when getting offer info...');
@@ -18,16 +29,15 @@ export default class Offer {
 	}
 
 	async acceptReview(id) {
-		// Notify server that review {id} has been accepted
+		this.acceptReviewStatus = false;
 		try {
-			const res = await axios.post(`https://www.mocky.io/v2/5185415ba171ea3a00704eed`, {
+			const res = await axios.post(`${apiURL}/${acceptReviewURL}`, 
+			{
 				"id": id,
 				"accepted": true
 			});
 			this.acceptReviewStatus = res.status;
-			console.log(this.acceptReviewStatus);
 		} catch (error) {
-			console.log(this.acceptReviewStatus);
 			console.log(error);
 		}
 	}

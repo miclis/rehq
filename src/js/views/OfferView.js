@@ -91,7 +91,7 @@ export const renderOffer = offer => {
                 >
                 <span
                     class="offer__info-data offer__info-data--price offer__info-data--price-owners"
-                    >${formatPrice(offer.ownersPrice)}</span
+                    >${formatPrice(offer.ownersPrice, false)}</span
                 >
             </div>
             <div class="offer__info">
@@ -101,7 +101,11 @@ export const renderOffer = offer => {
                 >
                 <span
                     class="offer__info-data offer__info-data--price offer__info-data--price-ours"
-                    >${formatPrice(offer.ourPrice)}</span
+                    >${
+						typeof calcOurPrice(offer) == 'number'
+							? formatPrice(calcOurPrice(offer), false)
+							: 'N/A'
+					}</span
                 >
             </div>
         </div>
@@ -113,4 +117,37 @@ export const renderOffer = offer => {
         </div>
     `;
 	elements.offer.insertAdjacentHTML('afterbegin', markup);
+};
+
+const calcOurPrice = offer => {
+	let finalPrice;
+	let sum = 0;
+	const reviewCount = offer.reviewCount;
+	let acceptedCount = 0;
+
+	if (reviewCount != 0) {
+		offer.reviews.forEach(review => {
+			if (review.accepted) {
+				sum += review.ourPrice;
+				acceptedCount++;
+			}
+		});
+		finalPrice = Math.round(sum / acceptedCount);
+	}
+	return finalPrice;
+};
+
+export const adjustOurPrice = offer => {
+	Array.from(elements.offer.children).forEach(el => {
+		if (el.classList.contains('offer__container')) {
+			Array.from(el.children).forEach(sel => {
+				Array.from(sel.children).forEach(ssel => {
+					if (ssel.classList.contains('offer__info-data--price-ours')) {
+                        const newPrice = calcOurPrice(offer);
+						ssel.textContent = typeof(newPrice) == 'number' ? formatPrice(newPrice, false) : 'N/A';
+					}
+				});
+			});
+		}
+	});
 };

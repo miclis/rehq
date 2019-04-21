@@ -33,7 +33,7 @@ export const limitOfferName = (name, limit = 28) => {
 	return name;
 };
 
-export const formatPrice = number => {
+export const formatPrice = (number, addSign = true) => {
 	let st = number.toString();
 	const sign = '$';
 
@@ -41,7 +41,7 @@ export const formatPrice = number => {
 		st = st.substr(0, st.length - 3) + "'" + st.substr(st.length - 3, st.length);
 	}
 
-	return st + ' ' + sign;
+	return st + ' ' + (addSign ? sign : '');
 };
 
 const renderOffer = offer => {
@@ -57,7 +57,7 @@ const renderOffer = offer => {
             <div class="results__data">
                 <h4 class="results__name">${limitOfferName(offer.name)}</h4>
                 <p class="results__owner">${offer.owner}</p>
-                <p class="results__price">${formatPrice(offer.ourPrice)}</p>
+                <p class="results__price">${formatPrice(offer.ownersPrice)}</p>
             </div>
         </a>
     </li>

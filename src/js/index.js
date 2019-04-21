@@ -11,8 +11,7 @@ import { elements, renderLoader, clearLoader } from './views/base';
 /** Global state of the app
  * - OfficeList object
  * - OfferList object
- * - Offer object
- * - ReviewList object
+ * - Offer object (includes Reviews)
  */
 const state = {};
 
@@ -30,7 +29,8 @@ const controlOfficeList = async () => {
 	renderLoader(elements.officesRes);
 	try {
 		// 3. Get offices
-		await state.officeList.getAllResults();
+		await state.officeList.getDefaultResults();
+		// await state.offerList.getResults();
 
 		// 4. Render offices
 		clearLoader();
@@ -42,9 +42,10 @@ const controlOfficeList = async () => {
 	}
 };
 
+window.addEventListener('load', controlOfficeList);
+
 elements.searchForm.addEventListener('submit', e => {
 	e.preventDefault();
-	controlOfficeList();
 });
 
 elements.officesResPages.addEventListener('click', e => {
@@ -76,7 +77,7 @@ const controlOfferList = async () => {
 
 	try {
 		// 3. Get offers
-		await state.offerList.getAllResults();
+		await state.offerList.getDefaultResults();
 		// await state.offerList.getResults(id);
 
 		// 4. Render offices
@@ -118,7 +119,8 @@ const controlOffer = async () => {
 
 		try {
 			// 5. Get Offer data
-			await state.offer.getOffer();
+			await state.offer.getDefaultOffer();
+			// await state.offer.getOffer(id);
 
 			// 6. Render Offer
 			clearLoader();
@@ -147,27 +149,33 @@ const acceptReview = async id => {
 	// id from event
 	try {
 		// 1. Send accepted request to API, wait for response
-		state.offer.acceptReview(id);
+		await state.offer.acceptReview(id);
+
+		if (!state.offer.acceptReviewStatus)
+			throw new Error(`Server responded with: ${state.offer.acceptReviewStatus}`);
 
 		// 2. Accept state value
 		state.offer.result.reviews.forEach(review => {
-			if(review.id == id) review.accepted = true;
-		})
+			if (review.id == id) review.accepted = true;
+		});
 
 		// 3. Render changes on UI (change icon to green, adjust our price)
 		offerView.acceptReview(id);
+		offerView.adjustOurPrice(state.offer.result);
+
 	} catch (error) {
-		alert('Something went wrong when accepting review...');
+		alert('Could not update review status on the server...');
 		console.log(error);
 	}
 };
 
 elements.offer.addEventListener('click', e => {
 	const btn = e.target.closest('.btn-tiny');
-	const isAlreadyAccepted = btn.classList.contains('reviev__accept--accepted') ? true : false;
 
-	if (btn && !isAlreadyAccepted) {
-		const reviewId = btn.dataset.revid;
-		acceptReview(reviewId);
+	if (btn) {
+		if (!btn.classList.contains('reviev__accept--accepted') ? true : false) {
+			const reviewId = btn.dataset.revid;
+			acceptReview(reviewId);
+		}
 	}
 });
