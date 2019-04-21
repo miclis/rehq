@@ -2,7 +2,16 @@ import { elements } from './base';
 import { formatPrice } from './offerListView';
 
 export const clearOffer = () => {
-    elements.offer.innerHTML = '';
+	elements.offer.innerHTML = '';
+};
+
+export const acceptReview = id => {
+	const resultsArr = Array.from(document.querySelectorAll('.review__accept'));
+	resultsArr.forEach(el => {
+		if (el.dataset.revid == id) {
+			el.classList.add('reviev__accept--accepted');
+		}
+	});
 };
 
 const createReview = review => `
@@ -30,7 +39,9 @@ const createReview = review => `
                         class="offer__info-data offer__info-data--price offer__info-data--price-ours"
                         >${formatPrice(review.ourPrice)}</span
                     >
-                    <button class="review__accept ${review.accepted ? 'reviev__accept--accepted': ''} btn-tiny">
+                    <button class="review__accept ${
+						review.accepted ? 'reviev__accept--accepted' : ''
+					} btn-tiny" data-revid=${review.id}>
                         <svg class="offer__info-icon">
                             <use href="img/ext-icons.svg#icon-checked"></use>
                         </svg>

@@ -130,20 +130,6 @@ const controlOffer = async () => {
 	}
 };
 
-const acceptReview = (id) => {
-	try {
-		// Send accepted request to API, wait for response
-
-		// 
-
-
-	} catch (error) {
-
-	}
-
-	
-}
-
 ['hashchange', 'load'].forEach(event =>
 	window.addEventListener(event, function() {
 		var regexOffices = /#[^\$]/;
@@ -156,3 +142,32 @@ const acceptReview = (id) => {
 		}
 	})
 );
+
+const acceptReview = async id => {
+	// id from event
+	try {
+		// 1. Send accepted request to API, wait for response
+		state.offer.acceptReview(id);
+
+		// 2. Accept state value
+		state.offer.result.reviews.forEach(review => {
+			if(review.id == id) review.accepted = true;
+		})
+
+		// 3. Render changes on UI (change icon to green, adjust our price)
+		offerView.acceptReview(id);
+	} catch (error) {
+		alert('Something went wrong when accepting review...');
+		console.log(error);
+	}
+};
+
+elements.offer.addEventListener('click', e => {
+	const btn = e.target.closest('.btn-tiny');
+	const isAlreadyAccepted = btn.classList.contains('reviev__accept--accepted') ? true : false;
+
+	if (btn && !isAlreadyAccepted) {
+		const reviewId = btn.dataset.revid;
+		acceptReview(reviewId);
+	}
+});

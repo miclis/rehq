@@ -19,5 +19,16 @@ export default class Offer {
 
 	async acceptReview(id) {
 		// Notify server that review {id} has been accepted
+		try {
+			const res = await axios.post(`https://www.mocky.io/v2/5185415ba171ea3a00704eed`, {
+				"id": id,
+				"accepted": true
+			});
+			this.acceptReviewStatus = res.status;
+			console.log(this.acceptReviewStatus);
+		} catch (error) {
+			console.log(this.acceptReviewStatus);
+			console.log(error);
+		}
 	}
 }
