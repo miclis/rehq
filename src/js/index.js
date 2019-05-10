@@ -63,28 +63,28 @@ elements.officesResPages.addEventListener('click', e => {
  * OFFERLIST CONTROLLER
  */
 const controlOfferList = async () => {
-	// Get Office Id from URL
+	// 1. Get Office Id from URL
 	const id = window.location.hash.replace('#?officeId=', '').slice(0, 7);
 
-	// 1. New OfferList object and add to state
+	// 2. New OfferList object and add to state
 	state.offerList = new OfferList();
 
-	// 2. Prepare UI for Offers results
+	// 3. Prepare UI for Offers results
 	offerListView.clearOffers();
 	offerView.clearOffer();
 	renderLoader(elements.offersRes);
 
-	// 3. Highlight selected offer item
-	if (state.officeList) officeListView.highlightSelected(id);
-
 	try {
-		// 3. Get offers
+		// 4. Get offers
 		await state.offerList.getDefaultResults();
 		// await state.offerList.getResults(id);
 
-		// 4. Render offices
+		// 5. Render offices
 		clearLoader();
 		offerListView.renderOffers(state.offerList.result);
+
+		// 6. Highlight selected office
+		if (state.officeList) officeListView.highlightSelected(id);
 	} catch (error) {
 		alert('Something went wrong when rendering offers data...');
 		console.log(error);
@@ -106,27 +106,28 @@ elements.offersResPages.addEventListener('click', e => {
  */
 const controlOffer = async () => {
 	// 1. Get Id from URL
-	const id = window.location.hash.replace('#$', '');
+	const id = window.location.hash.slice(27, 33);
 
 	if (id) {
 		// 2. Prepare UI for changes
 		offerView.clearOffer();
 		renderLoader(elements.offer);
+		console.log(id);
 
-		// 3. Highlight selected offer item
-		if (state.offerList) offerListView.highlightSelected(id);
-
-		// 4. Create new offer object
+		// 3. Create new offer object
 		state.offer = new Offer(id);
 
 		try {
-			// 5. Get Offer data
+			// 4. Get Offer data
 			await state.offer.getDefaultOffer();
 			// await state.offer.getOffer(id);
 
-			// 6. Render Offer
+			// 5. Render Offer
 			clearLoader();
 			offerView.renderOffer(state.offer.result);
+
+			// 6. Highlight selected offer item
+			if (state.offerList) offerListView.highlightSelected(id);
 		} catch (error) {
 			alert('Something went wrong when rendering offer...');
 			console.log(error);
@@ -135,19 +136,18 @@ const controlOffer = async () => {
 };
 
 ['hashchange', 'load'].forEach(event =>
-	window.addEventListener(event, function() {
+	window.addEventListener(event, async () => {
 		var regexOffices = /officeId=/;
 		var regexOffers = /offerId=/;
 		const hash = window.location.hash;
 
 		if (hash.match(regexOffices) && !hash.match(regexOffers)) {
-			controlOfferList();
+			await controlOfferList();
 			state.offerListLoaded = true;
-			console.log('done');
 		} else if (window.location.hash.match(regexOffers)) {
 			if (!state.offerListLoaded) {
 				console.log('reload');
-				controlOfferList();
+				await controlOfferList();
 			}
 			controlOffer();
 		}
@@ -171,7 +171,6 @@ const acceptReview = async id => {
 		// 3. Render changes on UI (change icon to green, adjust our price)
 		offerView.acceptReview(id);
 		offerView.adjustOurPrice(state.offer.result);
-
 	} catch (error) {
 		alert('Could not update review status on the server...');
 		console.log(error);
