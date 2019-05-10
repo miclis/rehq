@@ -209,6 +209,7 @@ body {
 	margin-left: 4rem;
 	height: 4.5rem;
 	display: block;
+	transform: scale(1.8) translateX(2rem);
 }
 
 .search {
