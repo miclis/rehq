@@ -112,7 +112,6 @@ const controlOffer = async () => {
 		// 2. Prepare UI for changes
 		offerView.clearOffer();
 		renderLoader(elements.offer);
-		console.log(id);
 
 		// 3. Create new offer object
 		state.offer = new Offer(id);
@@ -146,7 +145,6 @@ const controlOffer = async () => {
 			state.offerListLoaded = true;
 		} else if (window.location.hash.match(regexOffers)) {
 			if (!state.offerListLoaded) {
-				console.log('reload');
 				await controlOfferList();
 			}
 			controlOffer();
