@@ -31,8 +31,8 @@ const controlOfficeList = async () => {
 	renderLoader(elements.officesRes);
 	try {
 		// 3. Get offices
-		await state.officeList.getDefaultResults();
-		// await state.offerList.getResults();
+		//await state.officeList.getDefaultResults();
+		await state.officeList.getResults();
 
 		// 4. Render offices
 		clearLoader();
@@ -76,8 +76,8 @@ const controlOfferList = async () => {
 
 	try {
 		// 4. Get offers
-		await state.offerList.getDefaultResults();
-		// await state.offerList.getResults(id);
+		//await state.offerList.getDefaultResults();
+		await state.offerList.getResults(id);
 
 		// 5. Render offices
 		clearLoader();

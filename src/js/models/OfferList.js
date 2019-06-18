@@ -6,8 +6,8 @@ export default class OfferList {
 
 	async getResults(id) {
 		try {
-			const res = await axios(`${apiURL}/${token}/${offersURL}/${id}`);
-			this.result = res.data.offers;
+			const res = await axios(`${apiURL}/${offersURL}?officeId=${id}`);
+			this.result = res.data;
 		} catch (error) {
 			console.log(error);
 			alert('Something went wrong when getting offers :(');

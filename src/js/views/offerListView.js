@@ -61,9 +61,10 @@ const getOfficeId = () => {
 }
 
 const renderOffer = offer => {
+	console.log(offer);
 	const markup = `
     <li>
-        <a class="results__link results__link--offer" href="${getOfficeId()}&offerId=${offer.id}">
+        <a class="results__link results__link--offer" href="${getOfficeId()}&offerId=${offer.offerId}">
             <figure class="results__fig">
                 <img
                     src="${offer.imageUrl}"

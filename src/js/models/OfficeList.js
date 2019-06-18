@@ -6,8 +6,8 @@ export default class OfficeList {
 
 	async getResults() {
 		try {
-			const res = await axios(`${apiURL}/${token}/${officesURL}`);
-			this.result = res.data.offices;
+			const res = await axios(`${apiURL}/${officesURL}`);
+			this.result = res.data;
 		} catch (error) {
 			console.log(error);
 			alert('Something went wrong when getting offices :(');
