@@ -10,11 +10,9 @@ export const highlightSelected = id => {
 	resultsArr.forEach(el => {
 		el.classList.remove('results__link--active');
 	});
-	const check = document.querySelector(`.results__link[href*="${id}"]`);
+	const check = document.querySelector(`.results__link[href*="#?officeId=000001&offerId=${id}"]`);
 	if (check)
-		document
-			.querySelector(`.results__link[href*="${id}"]`)
-			.classList.add('results__link--active');
+		check.classList.add('results__link--active');
 };
 
 // Cuts the name into words and then joins again until the length is <= limit

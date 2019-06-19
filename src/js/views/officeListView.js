@@ -7,9 +7,13 @@ export const clearOffices = () => {
 
 export const highlightSelected = id => {
 	const resultsArr = Array.from(document.querySelectorAll('.results__link--office'));
+
+	// clear active
 	resultsArr.forEach(el => {
 		el.classList.remove('results__link--active');
 	});
+
+	// highlight new
 	const check = document.querySelector(`.results__link[href*="${id}"]`);
 	if (check)
 		document

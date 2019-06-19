@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { proxy, token, apiURL, offerURL, acceptReviewURL } from '../config';
+import { proxy, token, apiURL, offerURL, acceptReviewURL, reviewsURL } from '../config';
 
 export default class Offer {
 	constructor(id) {
@@ -8,12 +8,20 @@ export default class Offer {
 
 	async getOffer(id) {
 		try {
-			const res = await axios(`${apiURL}/${token}/${offerURL}/${id}`);
+			const res = await axios(`${apiURL}/${offerURL}?offerId=${id}`);
 			this.result = res.data;
 		} catch (error) {
 			alert('Something went wrong when getting offer info...');
 			console.log(error);
 			throw new Error('Failed to get offer...');
+		}
+		try {
+			const reviewRes = await axios(`${apiURL}/${reviewsURL}?offerId=${id}`);
+			this.result.reviews = reviewRes.data;
+		} catch (error) {
+			alert('Something went wrong when getting reviews...');
+			console.log(error);
+			throw new Error('Failed to get reviews...');
 		}
 	}
 
@@ -30,12 +38,9 @@ export default class Offer {
 
 	async acceptReview(id) {
 		this.acceptReviewStatus = false;
+		console.log(id);
 		try {
-			const res = await axios.post(`${apiURL}/${acceptReviewURL}`, 
-			{
-				"id": id,
-				"accepted": true
-			});
+			const res = await axios.put(`${apiURL}/${acceptReviewURL}?reviewId=${id}`);
 			this.acceptReviewStatus = res.status;
 		} catch (error) {
 			console.log(error);

@@ -106,8 +106,9 @@ elements.offersResPages.addEventListener('click', e => {
  */
 const controlOffer = async () => {
 	// 1. Get Id from URL
-	const id = window.location.hash.slice(27, 33);
+	const id = window.location.hash.slice(26, 33);
 
+	console.log(id);
 	if (id) {
 		// 2. Prepare UI for changes
 		offerView.clearOffer();
@@ -118,8 +119,8 @@ const controlOffer = async () => {
 
 		try {
 			// 4. Get Offer data
-			await state.offer.getDefaultOffer();
-			// await state.offer.getOffer(id);
+			//await state.offer.getDefaultOffer();
+			await state.offer.getOffer(id);
 
 			// 5. Render Offer
 			clearLoader();
@@ -168,6 +169,7 @@ const acceptReview = async id => {
 
 		// 3. Render changes on UI (change icon to green, adjust our price)
 		offerView.acceptReview(id);
+		console.log(state.offer);
 		offerView.adjustOurPrice(state.offer.result);
 	} catch (error) {
 		alert('Could not update review status on the server...');

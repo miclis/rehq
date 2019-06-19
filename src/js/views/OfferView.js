@@ -41,7 +41,7 @@ const createReview = review => `
                     >
                     <button class="review__accept ${
 						review.accepted ? 'reviev__accept--accepted' : ''
-					} btn-tiny" data-revid=${review.id}>
+					} btn-tiny" data-revid=${review.reviewId}>
                         <svg class="offer__info-icon">
                             <use href="img/ext-icons.svg#icon-checked"></use>
                         </svg>
@@ -49,13 +49,14 @@ const createReview = review => `
                 </div>
             </li>
             <li>
-                <p class="review__description">${review.notes}</p>
+                <p class="review__description">${review.desc}</p>
             </li>
         </ul>
     </li>
 `;
 
 export const renderOffer = offer => {
+    console.log(offer);
 	const markup = `
         <figure class="offer__fig">
             <img src="${offer.imageUrl}" alt="${offer.name}" class="offer__img" />
@@ -74,7 +75,7 @@ export const renderOffer = offer => {
                 <svg class="offer__info-icon">
                     <use href="img/ext-icons.svg#icon-rating"></use>
                 </svg>
-                <span class="offer__info-data offer__info-data--id">${offer.id}</span>
+                <span class="offer__info-data offer__info-data--id">${offer.offerId}</span>
             </div>
             <div class="offer__info">
                 <svg class="offer__info-icon">
@@ -144,6 +145,7 @@ export const adjustOurPrice = offer => {
 				Array.from(sel.children).forEach(ssel => {
 					if (ssel.classList.contains('offer__info-data--price-ours')) {
                         const newPrice = calcOurPrice(offer);
+                        console.log(newPrice);
 						ssel.textContent = typeof(newPrice) == 'number' ? formatPrice(newPrice, false) : 'N/A';
 					}
 				});
