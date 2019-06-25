@@ -108,7 +108,6 @@ const controlOffer = async () => {
 	// 1. Get Id from URL
 	const id = window.location.hash.slice(26, 33);
 
-	console.log(id);
 	if (id) {
 		// 2. Prepare UI for changes
 		offerView.clearOffer();
